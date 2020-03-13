@@ -1,0 +1,14 @@
+---
+- hosts: thosts:192.168.3.17
+  remote_user: root
+  tasks:
+    - name: copy rpm package
+      copy: src=zabbix-agent-4.0.18-1.el7.x86_64.rpm dest=/usr/local/src owner=root group=root
+    - name: install
+      yum: name=/usr/local/src/zabbix-agent-4.0.18-1.el7.x86_64.rpm state=prestat
+    - name: cofig file
+      copy: src=zabbix_agentd.conf dest=/etc/zabbix owner=root group=root
+    - name: start the zabbix-agent
+      service: name=zabbix-agent state=started
+    - name: startup
+      service: name=zabbix-agent enabled=yes
