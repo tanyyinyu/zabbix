@@ -1,4 +1,3 @@
-bash
 #! /bin/bash
 while :
   do
@@ -13,7 +12,7 @@ while :
     esac
   done
 ZABBIX_DB=zabbix_t   #zabbix DB name, to be created;
-ZABBIX_IP=192.168.3.16  #zabbix server IP;
+ZABBIX_IP=192.168.3.17  #zabbix server IP;
 ZABBIX_U=zabbix_user    #DB user name;
 ZABBIX_PW=zabbix_pw   #DB pw;
 SQL_HOST=127.0.0.1   #mysql host IP;
